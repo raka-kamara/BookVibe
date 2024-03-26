@@ -1,0 +1,81 @@
+[
+    {
+      "bookId": 1,
+      "bookName": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "image": "https://i.ibb.co/nc7sFvt/Gatsby.jpg",
+      "review": "A captivating tale of love and betrayal set in the Roaring Twenties.",
+      "totalPages": 218,
+      "rating": 4.5,
+      "category": "Classic",
+      "tags": ["Fiction", "Romance"],
+      "publisher": "Scribner",
+      "yearOfPublishing": 1925
+    },
+    {
+      "bookId": 2,
+      "bookName": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "image": "https://i.ibb.co/7VtKdzV/mokingbird.jpg",
+      "review": "A powerful exploration of racial injustice and moral growth in the American South.",
+      "totalPages": 324,
+      "rating": 4.7,
+      "category": "Classic",
+      "tags": ["Fiction", "Drama"],
+      "publisher": "J. B. Lippincott & Co.",
+      "yearOfPublishing": 1960
+    },
+    {
+      "bookId": 3,
+      "bookName": "1984",
+      "author": "George Orwell",
+      "image": "https://i.ibb.co/qm9NCKq/George-Orwell.jpg",
+      "review": "A dystopian masterpiece that serves as a chilling warning about the dangers of totalitarianism.",
+      "totalPages": 328,
+      "rating": 4.6,
+      "category": "Dystopian",
+      "tags": ["Fiction", "Political"],
+      "publisher": "Secker & Warburg",
+      "yearOfPublishing": 1949
+    },
+    {
+      "bookId": 4,
+      "bookName": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "image": "https://i.ibb.co/wBCDz80/The-Catcher-in-the-Rye.jpg",
+      "review": "A poignant coming-of-age story that captures the angst and disillusionment of adolescence.",
+      "totalPages": 224,
+      "rating": 4.3,
+      "category": "Classic",
+      "tags": ["Fiction", "Young Adult"],
+      "publisher": "Little, Brown and Company",
+      "yearOfPublishing": 1951
+    },
+    {
+      "bookId": 5,
+      "bookName": "The Hunger Games",
+      "author": "Suzanne Collins",
+      "image": "https://i.ibb.co/bJRK7YW/The-Hunger-Games.jpg",
+      "review": "A thrilling dystopian adventure that explores themes of survival and rebellion.",
+      "totalPages": 374,
+      "rating": 4.4,
+      "category": "Science Fiction",
+      "tags": ["Fiction", "Adventure"],
+      "publisher": "Scholastic Corporation",
+      "yearOfPublishing": 2008
+    },
+    {
+      "bookId": 6,
+      "bookName": "The Hobbit",
+      "author": "J.R.R. Tolkien",
+      "image": "https://i.ibb.co/87Fwpyf/The-Hobbit.jpg",
+      "review": "An enchanting tale of a reluctant hero's journey through Middle-earth.",
+      "totalPages": 310,
+      "rating": 4.8,
+      "category": "Fantasy",
+      "tags": ["Fiction", "Adventure"],
+      "publisher": "Allen & Unwin",
+      "yearOfPublishing": 1937
+    }
+  ]
+  
