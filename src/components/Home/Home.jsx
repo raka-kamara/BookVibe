@@ -1,6 +1,7 @@
 import Banner from "../Banner/Banner";
 import Books from "../Books/Books";
 import { useEffect, useState } from "react";
+import Detailes from "../Details/Detailes";
 
 const Home = () => {
   const [books, setBooks] = useState([]);
