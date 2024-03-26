@@ -1,4 +1,12 @@
-# React + Vite
+# Books Vibe
+
+## Features
+
+-this site shows the list of books on home page
+- People can add to bookmark
+- People can add books to read list
+- It show a chart
+- it can sort by rating, publication year
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
