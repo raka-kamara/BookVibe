@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getOtherStoredData } from "../../Utility/localstorage";
 import { Link } from "react-router-dom";
+import { RiArrowDropDownLine } from "react-icons/ri";
 
 
 const WishlistBooks = () => { 
@@ -24,10 +25,78 @@ const WishlistBooks = () => {
         console.log(storingBooks);
       }
   }, [books])
+
+  // Shows filterd book by category on descendent order by book name
+  const handleBooksFilter = (filter) =>{
+    let filteredBooks = [];
+
+    if(filter === 'All'){
+      filteredBooks = appliedBooks; 
+    }
+    else if(filter === 'Classic'){
+      filteredBooks = books.filter(book => book.category === 'Classic');
+      
+    }
+    else if(filter === 'Dystopian'){
+      filteredBooks = books.filter(book => book.category === 'Dystopian');
+      
+    }
+    else if(filter === 'Science Fiction'){
+      filteredBooks= books.filter(book => book.category === 'Science Fiction');
+      
+    }
+    else if(filter === 'Fantasy'){
+      filteredBooks = books.filter(book => book.category === 'Fantasy');
+      
+    }
+    filteredBooks.sort((a, b) => {
+      const nameA = a.bookName.toUpperCase();
+      const nameB = b.bookName.toUpperCase();
+      if (nameA < nameB) {
+        return 1;
+      }
+      if (nameA > nameB) {
+        return -1;
+      }
+      return 0;
+    });
+  
+    setAppliedBooks([...filteredBooks]);
+  }
+
     
   return (
    
     <div>
+      <div  className="dropdown dropdown-btn justify-center items-center flex py-10  ">
+        <div
+          tabIndex={0}
+          role="button"
+          className="btn m-1 bg-[#23BE0A] text-white "
+        >
+         Sort by <p className="text-3xl"><RiArrowDropDownLine /></p>
+        </div>
+        <ul              
+          tabIndex={0}
+          className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+        >
+          <li onClick={() => handleBooksFilter('All')}>
+            <a>All</a>
+          </li>
+          <li onClick={() => handleBooksFilter('Classic')}>
+            <a>Classic</a>
+          </li>
+          <li onClick={() => handleBooksFilter('Dystopian')}>
+            <a>Dystopian</a>
+          </li>
+          <li onClick={() => handleBooksFilter('Science Fiction')}>
+            <a>Science Fiction</a>
+          </li>
+          <li onClick={() => handleBooksFilter('Fantasy')}>
+            <a>Fantasy</a>
+          </li>
+        </ul>
+      </div>
       <ul>
         {
           appliedBooks.map(book => <li key={book.id} className="my-10">

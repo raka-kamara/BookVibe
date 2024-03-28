@@ -15,7 +15,7 @@ const ReadBooks = () => {
     let filteredBooks = [];
 
     if(filter === 'All'){
-      filteredBooks = books; 
+      filteredBooks = readBooks; 
     }
     else if(filter === 'Classic'){
       filteredBooks = books.filter(book => book.category === 'Classic');
@@ -44,8 +44,9 @@ const ReadBooks = () => {
       }
       return 0;
     });
+    
   
-    setReadBooks(filteredBooks);
+   setReadBooks(filteredBooks);
   }
 
   
@@ -77,7 +78,7 @@ const ReadBooks = () => {
         >
          Sort by <p className="text-3xl"><RiArrowDropDownLine /></p>
         </div>
-        <ul              
+        <ul
           tabIndex={0}
           className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
         >
@@ -135,7 +136,6 @@ const ReadBooks = () => {
           </li>
         ))}
       </ul>
-      <PagesToRead booksData={{books, readBooks}} ></PagesToRead>
     </div>
   );
 };
