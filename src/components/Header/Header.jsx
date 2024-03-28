@@ -23,6 +23,16 @@ const Header = () => {
                 isActive ? 'text-[#23BE0A] font-bold' : 'font-bold'
             }>Link</NavLink>
         </li>
+        <li className="flex">
+            <NavLink to="/WhyReadBooks" className={({isActive }) =>
+                isActive ? 'text-[#23BE0A] font-bold' : 'font-bold'
+            }>WhyReadBooks?</NavLink>
+        </li>
+        <li className="flex">
+            <NavLink to="/BuyBook" className={({isActive }) =>
+                isActive ? 'text-[#23BE0A] font-bold' : 'font-bold'
+            }>Buy Book</NavLink>
+        </li>
     </>;
 
     return (
