@@ -1,16 +1,28 @@
 import { useLoaderData, useParams } from "react-router-dom";
 
+import 'react-toastify/dist/ReactToastify.css';
+import {  deleteBook, saveBook, saveOtherData } from "../../Utility/localstorage";
+import { ToastContainer } from "react-toastify";
+
 const Detailes = () => {
   const books = useLoaderData();
   const { bookId } = useParams();
 
   const bookInt = parseInt(bookId);
-
   const book = books.find((book) => book.bookId === bookInt);
 
-  console.log(book);
+  const handleRead = () =>{
+    saveBook(bookInt);
+    deleteBook(bookInt);
+    
+    
+  }
 
-  // const { image, bookName, author, category, rating, tags, bookId } = book;
+  const handleWishlist = () =>{
+    saveOtherData(bookInt);
+  }
+
+ 
 
   return (
     <div className="container my-24 mx-auto ">
@@ -49,13 +61,15 @@ const Detailes = () => {
             </tr>
           </table>
           <div className="card-actions justify-end gap-10">
-            <button className="btn bg-white w-24 border">Read</button>
-            <button className="btn w-24  bg-[#50B1C9] border-none text-white
+            <button onClick={handleRead} className="btn bg-white w-24 border">Read</button>
+            <button onClick={handleWishlist} className="btn w-24  bg-[#50B1C9] border-none text-white
             ">Wishlist</button>
           </div>
         </div>
       </div>
+      <ToastContainer></ToastContainer>
     </div>
+    
   );
 };
 

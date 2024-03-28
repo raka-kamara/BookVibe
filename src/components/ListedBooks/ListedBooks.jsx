@@ -1,12 +1,16 @@
 
+import ListBooks from "../ListBooks";
 
 const ListedBooks = () => {
-    return (
-        <div>
-            <h1>Im listed books</h1>
-            
+  return (
+    <div>
+        <ListBooks></ListBooks>
         </div>
-    );
+        
+
+
+    
+  );
 };
 
 export default ListedBooks;

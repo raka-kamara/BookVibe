@@ -1,17 +1,15 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import './index.css'
-import Root from './components/Root/Root.jsx';
-import Home from './components/Home/Home.jsx';
-import ListedBooks from './components/ListedBooks/ListedBooks.jsx';
-import PagesToRead from './components/PagesToRead/PagesToRead.jsx';
-import ErrorPage from './components/ErrorPage/ErrorPage.jsx';
-import Detailes from './components/Details/Detailes.jsx';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App.jsx";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import "./index.css";
+import Root from "./components/Root/Root.jsx";
+import Home from "./components/Home/Home.jsx";
+import ListedBooks from "./components/ListedBooks/ListedBooks.jsx";
+import PagesToRead from "./components/PagesToRead/PagesToRead.jsx";
+import ErrorPage from "./components/ErrorPage/ErrorPage.jsx";
+import Detailes from "./components/Details/Detailes.jsx";
+
 
 const router = createBrowserRouter([
   {
@@ -20,30 +18,30 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
-        path: '/',
+        path: "/",
         element: <Home></Home>,
       },
       {
-        path: '/listed',
-        element:<ListedBooks></ListedBooks>
-
+        path: "/listed",
+        element: <ListedBooks></ListedBooks>,
+       
       },
       {
-        path:'/pages',
-        element: <PagesToRead></PagesToRead>
+        path: "/pages",
+        element: <PagesToRead></PagesToRead>,
+        loader: () => fetch("/Books.json"),
       },
       {
-        path:'/book/:bookId',
+        path: "/book/:bookId",
         element: <Detailes></Detailes>,
-        loader: () => fetch('/Books.json')
-      }
-      
-    ]
+        loader: () => fetch("/Books.json"),
+      },
+    ],
   },
 ]);
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-   <RouterProvider router={router} />
-  </React.StrictMode>,
-)
+    <RouterProvider router={router} />
+  </React.StrictMode>
+);
